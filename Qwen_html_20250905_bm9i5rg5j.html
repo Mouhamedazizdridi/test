@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Katkoutii - Islamic Clothing Brand</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f9f6f0;
+      color: #444;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* Typography */
+    .arabic {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: #800020;
+      text-align: center;
+    }
+
+    /* Colors */
+    :root {
+      --burgundy: #800020;
+      --gold: #d4af37;
+      --beige: #f5f0e6;
+    }
+
+    /* Navigation */
+    #navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--burgundy);
+      color: white;
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cpl.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+  padding-top: 80px;
+}
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content .arabic {
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    /* Sections General Styling */
+    section {
+      padding: 6rem 5%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: var(--burgundy);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--gold);
+    }
+
+    /* Products Section */
+    .products {
+      background-color: var(--beige);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 1rem;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(128, 0, 32, 0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 2px solid var(--burgundy);
+    }
+
+    .product-card h3 {
+      margin: 1rem 0 0.5rem;
+      font-size: 1.3rem;
+      color: var(--burgundy);
+    }
+
+    .product-card p {
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* Why Choose Us */
+    .why-us {
+      background-color: white;
+      color: #555;
+    }
+
+    .why-us .arabic {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 1.5rem auto 0;
+      line-height: 1.8;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: var(--burgundy);
+      color: white;
+    }
+
+    .contact h2 {
+      color: var(--gold);
+    }
+
+    .contact p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .contact a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #333;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content .arabic {
+        font-size: 1.4rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .product-card h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 4rem 5%;
+      }
+    }
+
+    /* Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Amiri&family=Playfair+Display:wght@700&display=swap');
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="logo">N&A</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+ <!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>Nouhe & Aziz Brand <3</h1>
+    <p class="arabic">ماركة نهى و عزيز <3</p>
+  </div>
+</section>
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="isdal.jpg" alt="Isdal" />
+        <h3>Isdal — إسدال</h3>
+        <p>50 DT</p>
+      </div>
+      <div class="product-card">
+        <img src="robe2.jpg" alt="Robe" />
+        <h3>Robe — روبة</h3>
+        <p>50 DT</p>
+      </div>
+      <div class="product-card">
+        <img src="full.jpg" alt="Full Halal Outfit" />
+        <h3>Full Halal Outfit — اللباس الحلال الكامل</h3>
+        <p>120 DT</p>
+      </div>
+      <div class="product-card">
+        <img src="robe.jpg" alt="3abaya" />
+        <h3>3abaya — عباية</h3>
+        <p>50 DT</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-us" class="why-us">
+    <h2>Why Choose Us</h2>
+    <p class="arabic">نحن نحب الحب، نشارك الأشياء الحلال اللطيفة، وجودة منتجاتنا لا تجدها في مكان آخر.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:MyEmail@email.com">MyEmail@email.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Katkoutii. All rights reserved.</p>
+  </footer>
+
+  <!-- Smooth Scrolling Script -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
